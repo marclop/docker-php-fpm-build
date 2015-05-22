@@ -17,7 +17,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
 						libxslt1-dev \
 						libcurl4-gnutls-dev \
 						git \
-						## g++ is a requirement for intl and need to clean up that later, it's a fat motherfucker (look into apt-get purge)
 						g++ \
 						geoip-database* libgeoip-dev \
 						npm
@@ -36,9 +35,7 @@ RUN docker-php-ext-install \
 							bcmath \
 							bz2\
 							calendar\
-							curl \
 							exif \
-							fileinfo \
 							gettext \
 							geoip \
 							gd \
@@ -60,13 +57,13 @@ RUN docker-php-ext-install \
 							zendopcache \
 							zip
 
-# Configure additional flags for redis extension, documented on issue: https://github.com/phpredis/phpredis/issues/335
+# Configure additional flags for redis extension, specially to allow igbinary to serialize data when sent redis
 RUN docker-php-ext-configure redis --enable-redis-igbinary && \
 	docker-php-ext-install redis
 
 # Clean the temporary files
 RUN rm -rf /usr/src/php/ext/* /var/tmp/* \
 			/tmp/* /var/lib/apt/lists/* /usr/src/php/ext/* \
-			/usr/local/etc/php/conf.d/ext-curl.ini \
-			/usr/local/etc/php/conf.d/ext-fileinfo.ini
+			/etc/ssh/ssh_host_* /usr/share/man/?? \
+			/usr/share/man/??*
 
