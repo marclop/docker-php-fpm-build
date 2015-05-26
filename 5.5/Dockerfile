@@ -19,7 +19,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
 						git \
 						g++ \
 						geoip-database* libgeoip-dev \
-						npm
+						npm \
+						wget
 
 # Symbolic link to GMP headers and nodeJS
 RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h && \
