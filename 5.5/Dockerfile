@@ -25,7 +25,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
 
 # Symbolic link to GMP headers and nodeJS
 RUN ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/include/gmp.h && \
-	ln -s /usr/bin/nodejs /usr/bin/node
+	ln -s /usr/bin/nodejs /usr/bin/node && \
+	ln -s $(which php) /usr/bin/php
 
 # Download source for external PHP extensions
 RUN cd /usr/src/php/ext && pecl download $PACKAGE_LIST && \
@@ -68,4 +69,3 @@ RUN rm -rf /usr/src/php/ext/* /var/tmp/* \
 			/tmp/* /var/lib/apt/lists/* /usr/src/php/ext/* \
 			/etc/ssh/ssh_host_* /usr/share/man/?? \
 			/usr/share/man/??*
-

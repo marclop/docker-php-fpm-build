@@ -74,7 +74,8 @@ RUN buildDeps=" \
 	&& make install \
 	&& { find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; } \
 	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
-	&& make clean
+	&& make clean \
+	&& ln -s $(which php) /usr/bin/php
 
 COPY docker-php-ext-* /usr/local/bin/
 
