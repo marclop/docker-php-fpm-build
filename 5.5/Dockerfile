@@ -15,6 +15,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
 						libgmp-dev \
 						libssl-dev \
 						libxslt1-dev \
+						libjpeg-dev \
 						libcurl4-gnutls-dev \
 						git \
 						g++ \
