@@ -1,7 +1,7 @@
 FROM debian:jessie
 
 # persistent / runtime deps
-RUN apt-get update && apt-get install -y sudo git wget openssh-client libmcrypt4 libjpeg62 ca-certificates geoip-database* libgeoip-dev libpng12-0 libxslt1.1 npm curl libpcre3 librecode0 libsqlite3-0 libxml2 --no-install-recommends && rm -r /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y sudo git wget openssh-client libmcrypt4 libjpeg62 ca-certificates libgeoip-dev geoip-database* libgeoip-dev libpng12-0 libxslt1.1 npm curl libpcre3 librecode0 libsqlite3-0 libxml2 --no-install-recommends && rm -r /var/lib/apt/lists/*
 
 # phpize deps
 RUN apt-get update && apt-get install -y autoconf file g++ gcc libc-dev make pkg-config re2c --no-install-recommends && rm -r /var/lib/apt/lists/*
@@ -35,7 +35,6 @@ libgmp-dev \
 libpcre3-dev \
 libjpeg-dev \
 libpng12-dev \
-libgeoip-dev \
 libreadline6-dev \
 librecode-dev \
 libsqlite3-dev \
