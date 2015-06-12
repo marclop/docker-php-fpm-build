@@ -64,6 +64,7 @@ libxslt1-dev \
     --enable-exif \
     --enable-igbinary \
     --enable-intl \
+    --enable-mbstring \
 		--enable-mysqlnd \
     --enable-opcache \
     --enable-pcntl \
