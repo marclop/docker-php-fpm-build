@@ -78,6 +78,7 @@ libxslt1-dev \
     --with-gd \
     --with-gmp \
     --with-jpeg-dir \
+		--with-mcrypt \
     --with-mysql \
     --with-mysqli \
     --with-openssl \
