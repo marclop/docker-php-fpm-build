@@ -61,11 +61,14 @@ RUN buildDeps=" \
     --enable-sockets \
     --enable-wddx \
     --enable-zip \
-    --with-bz2 \
+		--with-bz2 \
 		--with-curl \
     --with-gettext \
     --with-gmp \
+    --with-mysql \
+    --with-mysqli \
 		--with-openssl \
+    --with-pdo-mysql \
 		--with-readline \
 		--with-recode \
 		--with-zlib \
