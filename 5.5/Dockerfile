@@ -10,7 +10,7 @@ ENV PHP_INI_DIR /usr/local/etc/php
 RUN mkdir -p $PHP_INI_DIR/conf.d
 
 ENV PHP_EXTRA_CONFIGURE_ARGS --enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data
-ENV PACKAGE_LIST xdebug redis geoip igbinary solr
+ENV PACKAGE_LIST xdebug redis geoip igbinary solr SPL_Types
 
 ENV GPG_KEYS 0BD78B5F97500D450838F95DFE857D9A90D90EC1 0B96609E270F565C13292B24C13C70B87267B52D
 RUN set -xe \
