@@ -1,7 +1,7 @@
 FROM debian:jessie
 
 # persistent / runtime deps
-RUN apt-get update && apt-get install -y sudo git wget openssh-client libssl-dev libicu-dev ca-certificates curl libpcre3 librecode0 libsqlite3-0 libxml2 libxslt1.1 --no-install-recommends && rm -r /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y sudo git wget openssh-client libssl-dev libmcrypt4 libicu-dev ca-certificates curl libpcre3 librecode0 libsqlite3-0 libxml2 libxslt1.1 --no-install-recommends && rm -r /var/lib/apt/lists/*
 
 # phpize deps
 RUN apt-get update && apt-get install -y autoconf file g++ gcc libc-dev make pkg-config re2c --no-install-recommends && rm -r /var/lib/apt/lists/*
@@ -67,6 +67,7 @@ RUN buildDeps=" \
 		--with-curl \
     --with-gettext \
     --with-gmp \
+		--with-mcrypt \
     --with-mysql \
     --with-mysqli \
 		--with-openssl \
