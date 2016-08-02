@@ -69,6 +69,7 @@ libxslt1-dev \
     --enable-opcache \
     --enable-pcntl \
     --enable-shmop \
+    --enable-soap \
     --enable-sockets \
     --enable-wddx \
     --enable-zip \
