@@ -94,7 +94,7 @@ libxslt1-dev \
 	&& { find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; } \
   && chmod +x /usr/local/bin/docker-php-ext-* && sync \
   && cd /usr/src/php/ext && pecl download $PACKAGE_LIST \
-  && for PACKAGE in $PACKAGE_LIST; do tar xzf $PACKAGE-*  \
+  && for PACKAGE in $PACKAGE_LIST; do tar xzf $PACKAGE*  \
   && rm $PACKAGE*.tgz && mv $PACKAGE-* $PACKAGE; done \
   && docker-php-ext-install igbinary \
   && docker-php-ext-configure redis --enable-redis-igbinary \

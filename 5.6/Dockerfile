@@ -87,7 +87,7 @@ COPY docker-php-ext-* /usr/local/bin/
 
 # Download source for external PHP extensions
 RUN cd /usr/src/php/ext && pecl download $PACKAGE_LIST && \
-    for PACKAGE in $PACKAGE_LIST; do tar xzf $PACKAGE-* && \
+    for PACKAGE in $PACKAGE_LIST; do tar xzf $PACKAGE* && \
     rm $PACKAGE*.tgz && mv $PACKAGE-* $PACKAGE; done
 
 # Enable OPCache
