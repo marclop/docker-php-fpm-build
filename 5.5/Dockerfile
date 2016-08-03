@@ -97,7 +97,7 @@ libxslt1-dev \
   && for PACKAGE in $PACKAGE_LIST; do tar xzf $PACKAGE*  \
   && rm $PACKAGE*.tgz && mv $PACKAGE* $PACKAGE; done \
   && docker-php-ext-install igbinary \
-  && docker-php-ext-configure redis --enable-redis-igbinary \
+  && docker-php-ext-configure redis-2.2.8 --enable-redis-igbinary \
   && docker-php-ext-install $PACKAGE_LIST \
   && echo "zend_extension=opcache.so"> /usr/local/etc/php/conf.d/opcache.ini \
   && echo "extension=igbinary.so" > /usr/local/etc/php/conf.d/ext-igbinary.ini \
